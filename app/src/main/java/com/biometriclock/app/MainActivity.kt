@@ -2,7 +2,6 @@ package com.biometriclock.app
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.Gravity
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -47,14 +46,15 @@ class MainActivity : AppCompatActivity() {
             BiometricManager.BIOMETRIC_ERROR_HW_UNAVAILABLE ->
                 Toast.makeText(
                     this,
-                    "Sorry your phone doesn't support for biometric  ",
+                    "Sorry your phone doesn't support for biometric ",
                     Toast.LENGTH_SHORT
                 ).show()
             BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED ->
-                Log.e(
-                    "MY_APP_TAG", "The user hasn't associated " +
-                            "any biometric credentials with their account."
-                )
+                Toast.makeText(
+                    this,
+                    "Please, setup your biometric in settings",
+                    Toast.LENGTH_SHORT
+                ).show()
         }
     }
 
