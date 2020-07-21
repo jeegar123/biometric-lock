@@ -30,6 +30,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startBiometricLock() {
+        /*
+        *   getting Biometric Manger to work with system biometric
+        * */
         val biometricManager = BiometricManager.from(this)
         when (biometricManager.canAuthenticate()) {
             BiometricManager.BIOMETRIC_SUCCESS ->
